@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+      <p id="hello"> </p>
+  </body>
+
+  <script>
+
+    async function hello () {
+      const req = await fetch("http://localhost:9090/", {
+        method: "GET"
+      })
+
+      const res = await req.json();
+
+      document.getElementById("hello").innerHTML = res.data
+
+    } 
+
+    hello()
+  
+  </script>
+</html>
